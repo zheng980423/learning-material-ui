@@ -9,19 +9,25 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { AddCircleOutlined, SubjectOutlined } from '@material-ui/icons';
 import { useHistory, useLocation } from 'react-router';
 const drawWidth = 240;
-const useStyles = makeStyles({
-  page: {
-    background: '#f9f9f9',
-    width: '100%',
-  },
-  drawer: {
-    width: drawWidth,
-  },
-  drawerPaper: {
-    width: drawWidth,
-  },
-  root: { display: 'flex' },
-  active: { background: '#f4f4f4' },
+const useStyles = makeStyles(theme => {
+  return {
+    page: {
+      background: '#f9f9f9',
+      width: '100%',
+      padding: theme.spacing(3),
+    },
+    drawer: {
+      width: drawWidth,
+    },
+    drawerPaper: {
+      width: drawWidth,
+    },
+    root: { display: 'flex' },
+    active: { background: '#f4f4f4' },
+    title: {
+      padding: theme.spacing(3),
+    },
+  };
 });
 const Layout = ({ children }) => {
   const classes = useStyles();
@@ -47,7 +53,7 @@ const Layout = ({ children }) => {
         anchor="left"
         classes={{ paper: classes.drawerPaper }}
       >
-        <div>
+        <div className={classes.title}>
           <Typography>Ninja Notes</Typography>
         </div>
         {/* { list /links} */}
