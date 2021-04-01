@@ -3,7 +3,11 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormLabel from '@material-ui/core/FormLabel';
+import FormControl from '@material-ui/core/FormControl';
+import { FormControlLabel, makeStyles } from '@material-ui/core';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 
 const useStyles = makeStyles({
@@ -19,6 +23,8 @@ export default function Create() {
   const [details, setDetails] = useState('');
   const [titleError, setTitleError] = useState(false);
   const [detailsError, setDetailsError] = useState(false);
+  const [category, setCategory] = useState('todos');
+
   const handleSubmit = e => {
     e.preventDefault();
     setTitleError(false);
@@ -30,7 +36,7 @@ export default function Create() {
       setDetailsError(true);
     }
     if (title && details) {
-      console.log(title, details);
+      console.log(title, details, category);
     }
   };
   return (
@@ -66,6 +72,25 @@ export default function Create() {
           required
           error={detailsError}
         />
+        <FormControl className={classes.field}>
+          <FormLabel>Note category</FormLabel>
+          <RadioGroup
+            value={category}
+            onChange={e => {
+              setCategory(e.target.value);
+            }}
+          >
+            <FormControlLabel value="money" control={<Radio />} label="Money" />
+            <FormControlLabel
+              value="reminder"
+              control={<Radio />}
+              label="Reminder"
+            />
+            <FormControlLabel value="todos" control={<Radio />} label="Todos" />
+            <FormControlLabel value="work" control={<Radio />} label="Work" />
+          </RadioGroup>
+        </FormControl>
+
         <Button
           type="submit"
           color="secondary"
