@@ -2,20 +2,12 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
-// import ButtonGroup from '@material-ui/core/ButtonGroup';
+import SendIcon from '@material-ui/icons/Send';
 
+import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 export default function Create() {
   return (
     <Container>
-      {/* <Typography variant="h1" color="primary" align="center">
-        Create page
-      </Typography> */}
-      {/* <Typography color="secondary" noWrap>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore
-        cupiditate non, vero sunt, adipisci dignissimos amet et animi quam
-        pariatur distinctio, cum saepe sint sit.
-      </Typography> */}
-      {/* https://material-ui.com/zh/api/typography/ */}
       <Typography
         variant="h6"
         component="h2"
@@ -31,20 +23,18 @@ export default function Create() {
         type="submit"
         color="secondary"
         variant="contained"
+        endIcon={<KeyboardArrowRightIcon />}
       >
         Submit
       </Button>
-      {/* <Button type="submit" color="default">
-        Submit
-      </Button>
-      <Button type="submit" color="secondary" variant="outlined">
-        Submit
-      </Button>
-      <ButtonGroup color="secondary" variant="contained">
-        <Button>One</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
-      </ButtonGroup> */}
+      {/* icons */}
+      <br />
+      {/* <AcUnitOutlinedIcon color="secondary" fontSize="large" />
+      <AcUnitOutlinedIcon />
+      <AcUnitOutlinedIcon color="secondary" fontSize="small" />
+      <AcUnitOutlinedIcon color="action" fontSize="small" />
+      <AcUnitOutlinedIcon color="error" fontSize="small" />
+      <AcUnitOutlinedIcon color="disabled" fontSize="small" /> */}
     </Container>
   );
 }
