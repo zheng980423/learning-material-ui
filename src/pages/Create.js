@@ -12,6 +12,14 @@ export default function Create() {
         pariatur distinctio, cum saepe sint sit.
       </Typography> */}
       {/* https://material-ui.com/zh/api/typography/ */}
+      <Typography
+        variant="h6"
+        component="h2"
+        color="textSecondary"
+        gutterBottom
+      >
+        Create a New Note
+      </Typography>
     </div>
   );
 }
